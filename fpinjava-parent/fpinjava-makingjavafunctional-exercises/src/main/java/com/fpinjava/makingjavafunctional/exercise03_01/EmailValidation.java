@@ -24,9 +24,18 @@ public class EmailValidation {
         emailChecker.apply(null).bind(success, failure);
         emailChecker.apply("").bind(success, failure);
         emailChecker.apply("john.doe@acme.com").bind(success, failure);
+
+
+        Function<Double,Function<Double,Double>> compute = x->y->x-x*y;
+        System.out.println(compute.apply(10000d).apply(0.2));
+        Function<Double, Double> apply = compute.apply(10000d);
+        Double apply1 = apply.apply(0.3);
+        System.out.println(apply.apply(0.3));
+        System.out.println(apply.apply(0.4));
+
     }
 
     static Effect<String> success = s-> System.out.println("mail send to "+s);
 
-    static Effect<String> failure = s-> System.err.println("error message logged:"+s); // To be implemented
+    static Effect<String> failure = s-> System.err.println("error message logged:"+s);
 }

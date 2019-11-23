@@ -1,22 +1,21 @@
 package com.fpinjava.makingjavafunctional.exercise03_02;
 
+import com.fpinjava.common.Function;
+import com.fpinjava.makingjavafunctional.exercise03_01.Effect;
+import com.fpinjava.makingjavafunctional.exercise03_01.Result;
+import org.junit.Test;
+
+import java.util.regex.Pattern;
+
 import static com.fpinjava.makingjavafunctional.exercise03_01.Result.failure;
 import static com.fpinjava.makingjavafunctional.exercise03_01.Result.success;
 import static com.fpinjava.makingjavafunctional.listing03_08.Case.match;
 import static com.fpinjava.makingjavafunctional.listing03_08.Case.mcase;
 import static org.junit.Assert.*;
 
-import java.util.regex.Pattern;
-
-import com.fpinjava.common.Function;
-import com.fpinjava.makingjavafunctional.exercise03_01.Effect;
-import com.fpinjava.makingjavafunctional.exercise03_01.Result;
-
-import org.junit.Test;
-
 public class CaseTest {
 
-  /* Uncomment this these test once the exercise is solved
+
   @Test
   public void testMcaseSupplierOfBooleanSupplierOfResultOfT() {
     Case<Integer> c1 = Case.mcase(() -> true, () -> Result.success(4));
@@ -42,7 +41,7 @@ public class CaseTest {
     c1._2.get().bind(x -> success1.value = x, y -> failure1.value = y);
     assertEquals(Integer.valueOf(4), success1.value);
   }
-//*/
+
   @Test
   public void testMatch() {
     Pattern emailPattern =

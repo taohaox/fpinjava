@@ -1,5 +1,8 @@
 package com.fpinjava.makingjavafunctional.exercise03_01;
 
+/**
+ * @author admin-002
+ */
 public interface Result<T> {
 
     void bind(Effect<T> success, Effect<String> failure);
